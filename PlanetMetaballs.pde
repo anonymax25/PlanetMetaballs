@@ -1,12 +1,13 @@
 float scale = 0.0001;
 int resolustion = 3;
 boolean debug = false;
-Blob[] blobs = new Blob[4];
+Blob[] blobs = new Blob[10];
+int blobsLen = 10;
 
 void setup() {
   size(640, 360);
   noStroke();
-  for (int i=0; i < 4; i++) {         
+  for (int i=0; i < blobsLen; i++) {         
     blobs[i] = new Blob(width/4*i-width/2, 0);
   }
 }
@@ -14,18 +15,20 @@ void setup() {
 void draw() {
   background(100);
   translate(width/2, height/2);
-  blobs[0].coord.x = mouseX-width/2;
-  blobs[0].coord.y = mouseY-height/2;
+  blobs[0].pos.x = mouseX-width/2;
+  blobs[0].pos.y = mouseY-height/2;
   marchingSquares(resolustion);
   
-  
+  for (int i=0; i < blobsLen; i++) {         
+    blobs[i].update();
+  }
   
 }
 
-void mousePressed() {
-  blobs[0].coord.x = mouseX;
-  blobs[0].coord.y = mouseY;
-}
+// void mousePressed() {
+//   blobs[0].pos.x = mouseX;
+//   blobs[0].pos.y = mouseY;
+// }
 
 //heart
 /*
@@ -36,8 +39,8 @@ float f(float x, float y, float scale) {
 
 float f(float x1, float y1, float scale) {
   float res = 0;
-  for (int k=0; k < 4; k++) {   
-    res += 20 / sqrt(pow(x1 - blobs[k].coord.x,2) + pow(y1 - blobs[k].coord.y,2));
+  for (int k=0; k < blobsLen; k++) {   
+    res += blobs[k].radius / sqrt(pow(x1 - blobs[k].pos.x,2) + pow(y1 - blobs[k].pos.y,2));
   }
   return 1/res;
 }
