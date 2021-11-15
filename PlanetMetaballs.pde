@@ -1,11 +1,11 @@
 float scale = 0.0001;
-int resolustion = 3;
+int resolustion = 5;
 boolean debug = false;
 Blob[] blobs = new Blob[10];
 int blobsLen = 10;
 
 void setup() {
-  size(640, 360);
+  size(600, 600);
   noStroke();
   for (int i=0; i < blobsLen; i++) {         
     blobs[i] = new Blob(width/4*i-width/2, 0);
@@ -24,11 +24,6 @@ void draw() {
   }
   
 }
-
-// void mousePressed() {
-//   blobs[0].pos.x = mouseX;
-//   blobs[0].pos.y = mouseY;
-// }
 
 //heart
 /*
