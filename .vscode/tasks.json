@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run processing",
+      "command": "processing-java",
+      "args": [
+        "--force",
+        "--sketch=/home/maxime/Desktop/PlanetMetaballs",
+        "--output=/home/maxime/Desktop/PlanetMetaballs/out",
+        "--run"
+      ],
+      "type": "shell",
+      "problemMatcher": []
+    }
+  ]
+}
