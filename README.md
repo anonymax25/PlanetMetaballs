@@ -1,5 +1,6 @@
-# planet-metaballs
+# Planet-metaballs
 
+Processing project to test out the marching squares algorithm
 ## Requierments
 
 You need to have processing installed with the java version and the have the processing-java cli available 
