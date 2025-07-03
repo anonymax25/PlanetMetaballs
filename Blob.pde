@@ -1,3 +1,8 @@
+int init_vel = 2;
+float init_acc = 1.000;
+int init_radius = 50;
+int init_radius_range = 20;
+
 class Blob {
 
   float radius;
@@ -6,10 +11,10 @@ class Blob {
   PVector acc;
   
   Blob(float x, float y){
-    radius = random(15,35);
+    radius = random(init_radius, init_radius + init_radius_range);
     pos = new PVector(x,y);
-    vel = new PVector(random(-5,5),random(-5,5));
-    acc = new PVector(1.001,1.001);
+    vel = new PVector(random(-init_vel, init_vel),random(-init_vel, init_vel));
+    acc = new PVector(init_acc, init_acc);
   }
 
   void update() {

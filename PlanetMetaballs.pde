@@ -1,8 +1,8 @@
-float scale = 0.0001;
+float scale = 0.01;
 int resolustion = 5;
 boolean debug = false;
 Blob[] blobs = new Blob[10];
-int blobsLen = 10;
+int blobsLen = 3;
 
 void setup() {
   size(600, 600);
